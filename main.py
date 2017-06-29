@@ -7,6 +7,9 @@ LIMIT_FPS=20
 playerx= SCREEN_WIDTH/2
 playery= SCREEN_HEIGHT/2
 
+#create subconsoles
+con=libtcod.console_new(SCREEN_WIDTH, SCREEN_HEIGHT)
+
 #initialize for turn-based segments
 TURN_BASED=True
 #handle key input
@@ -38,10 +41,11 @@ libtcod.console_init_root(SCREEN_WIDTH, SCREEN_HEIGHT, 'PyRogue', False)
 
 #game loop
 while not libtcod.console_is_window_closed():
-    libtcod.console_set_default_foreground(0,libtcod.white)
-    libtcod.console_put_char(0,playerx,playery,'@', libtcod.BKGND_NONE)
+    libtcod.console_set_default_foreground(con,libtcod.white)
+    libtcod.console_put_char(con,playerx,playery,'@', libtcod.BKGND_NONE)
+    libtcod.console_blit(con, 0,0, SCREEN_WIDTH, SCREEN_HEIGHT,0,0,0)
     libtcod.console_flush();
-    libtcod.console_put_char(0,playerx,playery,' ',libtcod.BKGND_NONE)
+    libtcod.console_put_char(con,playerx,playery,' ',libtcod.BKGND_NONE)
     exit=handle_input()
     if exit:
         break
