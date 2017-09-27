@@ -1,3 +1,4 @@
 Muzzle angle(high/mid/low) based on grip stance
 pull based on weapons stats (pull left/right and deviates based on range)
 to generate a city map generate multiple levels of procedural generation(lay out grid, choose between industrial, commercial, or residential zoning, place buildings or lots, have templates of buildings to chose from.)
+Do we want to do networking?
